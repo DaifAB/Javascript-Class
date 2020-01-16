@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class</title>
+
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+
+	<h1>Sketchy Table</h1>
+
+	<div class="calc">
+
+<form>
+	<p>
+
+	 First Name :<input type="text" name="fname" id="fn">
+	 Last Name :<input type="text" name="fname" id="ln">
+	 Date of birth :<input type="text" name="fname" id="date">
+	 Place of birth:<input type="text" name="fname" id="place">
+	 Tel N° :<input type="text" name="fname" id="nbr">
+	 Adress :<input type="text" name="fname" id="adr">
+	
+	<input type="button" name="submit" value="submit !" onclick="affichage()">
+	</p>
+</form>
+</div>
+
+<table id="montableau" border="2px;">
+	<tr>
+		<th>First name</th>
+		<th>Last Name</th>
+		<th>Date</th>
+		<th>Place of birth</th>
+		<th>Te N°</th>
+		<th>Adresse</th>
+
+	</tr>	
+
+	
+</table>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" >
+
+	/*Creation de la classe*/
+
+class Personne {
+			  constructor(a,b,c,d,e,f) {
+			    this.fname = a;
+			    this.lname = b;
+			    this.date = c;
+			    this.place = d;
+			    this.nbr = e;
+			    this.adr = f;
+			  			
+			  }
+			}
+
+
+		/*Fonction d'affichage*/	
+
+	function affichage() {
+		
+	
+		
+			
+			//Creation d'un objet
+
+			var pers = new Personne(document.getElementById('fn').value,document.getElementById('ln').value,
+				document.getElementById('date').value,document.getElementById('place').value,document.getElementById('nbr').value,
+				document.getElementById('adr').value);
+
+			//Affichage dans un tableau
+
+		    // Création de la ligne
+		    var TR = document.createElement ("tr");
+			
+		    // Création de la première cellule
+		    var TD1  = document.createElement ("td");
+		    var TXT1 = document.createTextNode (pers.fname);
+		    TD1.appendChild (TXT1);
+			
+		    // Création de la deuxième cellule
+		    var TD2  = document.createElement ("td");
+		    var TXT2 = document.createTextNode (pers.lname);
+		    TD2.appendChild (TXT2);
+		    // Création de la 3eme cellule
+		    var TD3  = document.createElement ("td");
+		    var TXT3 = document.createTextNode (pers.date);
+		    TD3.appendChild (TXT3);
+		    // Création de la 4eme cellule
+		    var TD4  = document.createElement ("td");
+		    var TXT4 = document.createTextNode (pers.place);
+		    TD4.appendChild (TXT4);
+		    // Création de la 5 eme cellule
+		    var TD5  = document.createElement ("td");
+		    var TXT5 = document.createTextNode (pers.nbr);
+		    TD5.appendChild (TXT5);
+		    // Création de la 6eme cellule
+		    var TD6  = document.createElement ("td");
+		    var TXT6 = document.createTextNode (pers.adr);
+		    TD6.appendChild (TXT6);
+			
+		    // On assemble les cellules a la ligne
+		    TR.appendChild(TD1);
+		    TR.appendChild(TD2);
+		    TR.appendChild(TD3);
+		    TR.appendChild(TD4);
+		    TR.appendChild(TD5);
+		    TR.appendChild(TD6);
+
+		    // On assemble la ligne au tableau
+		    document.getElementById ('montableau').appendChild (TR);
+		}
+
+
+
+
+</script>
+
+</body>
+</html>

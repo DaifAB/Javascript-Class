@@ -1,0 +1,1 @@
+Le script javascript est inclu dans le code HTML
